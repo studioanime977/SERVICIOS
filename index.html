@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio al Cliente - Restaurante Delicia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Restaurante Delicia</h1>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#faq">FAQ</a>
+                <a href="#horarios">Horarios</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2>¿Necesitas Ayuda?</h2>
+            <p>Estamos aquí para brindarte el mejor servicio al cliente</p>
+            <button class="cta-button" onclick="scrollToSection('contacto')">
+                <i class="fas fa-phone"></i> Contáctanos
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>servicio@restaurantedelicia.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Calle Principal 123, Ciudad</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de Atención</h3>
+                            <p>Lun-Dom: 9:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="customerForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo de Consulta</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="reserva">Reservas</option>
+                                <option value="queja">Quejas</option>
+                                <option value="sugerencia">Sugerencias</option>
+                                <option value="menu">Consultas sobre el Menú</option>
+                                <option value="evento">Eventos Especiales</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Cómo puedo hacer una reserva?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Puedes hacer una reserva llamando al +1 (555) 123-4567, enviando un email a reservas@restaurantedelicia.com, o utilizando nuestro formulario de contacto.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Tienen opciones vegetarianas y veganas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos una amplia variedad de opciones vegetarianas y veganas. Nuestro menú incluye platos especialmente diseñados para satisfacer estas preferencias dietéticas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Cuál es su política de cancelación?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Las cancelaciones deben realizarse con al menos 2 horas de anticipación. Para grupos de más de 8 personas, requerimos 24 horas de anticipación.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Ofrecen servicio de delivery?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos servicio de delivery en un radio de 10 km. El tiempo de entrega es de 30-45 minutos y el costo de envío es de $3.99.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Aceptan tarjetas de crédito?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos todas las tarjetas de crédito principales (Visa, MasterCard, American Express), efectivo y pagos móviles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours-section" id="horarios">
+        <div class="container">
+            <h2>Horarios de Atención</h2>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Restaurante</h3>
+                    <div class="hours-list">
+                        <div class="hour-item">
+                            <span>Lunes - Jueves</span>
+                            <span>11:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span>Viernes - Sábado</span>
+                            <span>11:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span>Domingo</span>
+                            <span>12:00 PM - 9:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Servicio al Cliente</h3>
+                    <div class="hours-list">
+                        <div class="hour-item">
+                            <span>Lunes - Domingo</span>
+                            <span>9:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span>Tiempo de Respuesta</span>
+                            <span>Máximo 2 horas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Delivery</h3>
+                    <div class="hours-list">
+                        <div class="hour-item">
+                            <span>Lunes - Domingo</span>
+                            <span>12:00 PM - 10:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span>Tiempo de Entrega</span>
+                            <span>30-45 minutos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Restaurante Delicia</h3>
+                    <p>Brindando la mejor experiencia culinaria desde 1995</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Restaurante Delicia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <i class="fas fa-check-circle"></i>
+            <h3>¡Mensaje Enviado!</h3>
+            <p>Gracias por contactarnos. Te responderemos en un máximo de 2 horas.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
